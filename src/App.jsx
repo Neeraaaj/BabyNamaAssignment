@@ -20,14 +20,14 @@ function App() {
   };
 
   useEffect(() => {
-    let remainingTime = minutes * 60;
+    let seconds = minutes * 60;
 
     if(!StopTimer){
       const interval = setInterval(() => {
-            if (remainingTime > 0) {
-              remainingTime -= 1;
-              setFormattedTime(formatTime(remainingTime));
-            }else if(remainingTime == 0){
+            if (seconds > 0) {
+              seconds -= 1;
+              setFormattedTime(formatTime(seconds));
+            }else if(seconds == 0){
               setFormattedTime(formatTime(0)) 
             } else{
               clearInterval(interval);
