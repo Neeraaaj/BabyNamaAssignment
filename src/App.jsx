@@ -23,17 +23,17 @@ function App() {
     let remainingTime = minutes * 60;
 
     if(!StopTimer){
-      const intervalId = setInterval(() => {
+      const interval = setInterval(() => {
             if (remainingTime > 0) {
               remainingTime -= 1;
               setFormattedTime(formatTime(remainingTime));
             }else if(remainingTime == 0){
               setFormattedTime(formatTime(0)) 
             } else{
-              clearInterval(intervalId);
+              clearInterval(interval);
             }
           }, 1000);
-        return () => clearInterval(intervalId);
+        return () => clearInterval(interval);
     }
 
   }, [StopTimer, minutes]);
